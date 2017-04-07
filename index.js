@@ -48,23 +48,24 @@ function generateHistogram(input, output, inputSetting, callback) {
 					outputJimp.write(output, function() {
 						if (typeof callback === 'function') {
 							callback();
+              return;
 						}
 					});
 				});
 			}
 		});
 	});
-};
+}
 
 function getRGBMinMax(rgbData) {
 	var minmaxData = {
 		r: getMinMax(rgbData.r),
 		g: getMinMax(rgbData.g),
 		b: getMinMax(rgbData.b),
-		a: getMinMax(rgbData.a),
+		a: getMinMax(rgbData.a)
 	}
 	
-	minmaxData.bound = getMinMax([0, minmaxData.r.max, minmaxData.g.max, minmaxData.b.max, ]);
+	minmaxData.bound = getMinMax([0, minmaxData.r.max, minmaxData.g.max, minmaxData.b.max]);
 	
 	return minmaxData;
 }
@@ -122,7 +123,11 @@ function rgbDataToHis(rgbData, setting, callback) {
 	var rVertical = 0;
 	var gVertical = 0;
 	var bVertical = 0;
-	var imageOutput = new Jimp(setting.width , setting.height, 0xFFFFFFFF, function (err, image) {});
+	var imageOutput = new Jimp(setting.width , setting.height, 0xFFFFFFFF, function (err, image) {
+    if (err) {
+      console.log('Jimp create image error: ', err);
+    }
+  });
 	
 	for(var verticalIndex = 0; verticalIndex < w; verticalIndex++) {
 		
@@ -138,7 +143,7 @@ function rgbDataToHis(rgbData, setting, callback) {
 			
 			if (verticalIndex+1 === w && horizonIndex === 0) {
 				if (typeof callback === 'function') {
-					callback(imageOutput);
+					return callback(imageOutput);
 				}
 			}
 		}
