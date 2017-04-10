@@ -10,7 +10,7 @@ var option = {
 }
 his4gram('./lena.png', './histogram_lena.png', option);
 
-// run with only green and blue channel and have red background
+// run with only red channel
 var option = {
 	channel: { red: true, green: false, blue: false },
 }
@@ -22,11 +22,3 @@ var option = {
     background: { red: 125, green: 0, blue: 0},
 }
 his4gram('./lena.png', './custom_lena.jpg', option);
-
-
-// run with custom size setting
-var option = {
-    width: 512,
-    height: 512
-}
-his4gram('./lena.png', './custdom_lena.jpg', option);
