@@ -1,15 +1,19 @@
 {
   "name": "his4gram",
   "version": "1.0.5",
-  "description": "",
+  "description": "Photo histogram generator by Node.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "ardencod3 <ardencod3@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "jimp": "^0.2.27",
     "merge-options": "0.0.64"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ardencod3/his4gram.git"
   }
 }
