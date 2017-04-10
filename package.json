@@ -1,6 +1,6 @@
 {
   "name": "his4gram",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Photo histogram generator by Node.js",
   "main": "index.js",
   "scripts": {
