@@ -15,8 +15,7 @@ function defaultOption() {
 }
 function buildOption(inputOption) {
 	var option = inputOption;
-	
-	if (typeof option !== 'undefined' && typeof option !== 'object') {
+	if (!option || (typeof option !== 'undefined' && typeof option !== 'object')) {
 		option = {};
 	}
 
@@ -168,9 +167,4 @@ function array256Builder() {
 	return output;
 }
 
-module.export = generateHistogram;
-// var option = {
-// 	channel: { red: true, green: true, blue: true },
-// 	background: { red: 125, green: 125, blue: 125, alpha: 125},
-// }
-// generateHistogram('./4.jpg', './his_th_13389230.png', option);
+module.exports = generateHistogram;
