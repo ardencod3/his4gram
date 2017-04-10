@@ -6,7 +6,7 @@ his4gram('./lena.png', './histogram_normal_lena.jpg');
 // run with png transparent gray background
 var option = {
 	channel: { red: true, green: true, blue: true },
-	background: { red: 125, green: 125, blue: 125, alpha: 125},
+	background: { red: 125, green: 125, blue: 125, alpha: 0},
 }
 his4gram('./lena.png', './histogram_lena.png', option);
 
