@@ -15,5 +15,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ardencod3/his4gram.git"
-  }
+  },
+  "keywords": [
+    "image",
+    "histogram",
+    "image manipulation",
+    "jpeg",
+    "png"
+  ]
 }
